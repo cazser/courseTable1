@@ -16,6 +16,8 @@ public class GeneticAlgorithm {
         this.tournamentSize = tournamentSize;
     }
 
+
+
     /**
      * Initialize population
      *
@@ -183,5 +185,7 @@ public class GeneticAlgorithm {
 
         return newPopulation;
     }
-
+    public int getPopulationSize(){
+        return this.populationSize;
+    }
 }

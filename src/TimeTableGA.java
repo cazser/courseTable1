@@ -1,3 +1,8 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
 /**
  * Don't be daunted by the number of classes in this chapter -- most of them are
  * just simple containers for information, and only have a handful of properties
@@ -25,15 +30,16 @@
  * @author bkanber
  *
  */
+
 public class TimeTableGA {
-    private static Problem problem;
+
     public static void main(String[] args) {
         // Get a Timetable object with all the available information.
-        problem = new Problem();
+        Problem problem = new Problem();
         Timetable timetable = problem.initializeTimetable();
 
         // Initialize GA
-        GeneticAlgorithm ga = new GeneticAlgorithm(100, 0.01, 0.9, 2, 5);
+        GeneticAlgorithm ga = new GeneticAlgorithm(200, 0.01, 0.9, 2, 5);
 
         // Initialize population
         Population population = ga.initPopulation(timetable);
@@ -45,7 +51,7 @@ public class TimeTableGA {
         int generation = 1;
 
         // Start evolution loop
-        while (ga.isTerminationConditionMet(generation, 1000) == false
+        while (ga.isTerminationConditionMet(generation, 10000) == false
                 && ga.isTerminationConditionMet(population) == false) {
             // Print fitness
             // System.out.println("G" + generation + " Best fitness: " +
@@ -65,21 +71,136 @@ public class TimeTableGA {
         }
 
         // Print fitness
-        timetable.createClasses(population.getFittest(0));
-
+        int clashes = 1;
+        int i=0;
+        while(clashes!=0) {
+            timetable.createClasses(population.getFittest(i));
+            clashes = timetable.calcClashes();
+            System.out.println(clashes);
+            i++;
+        }
         // Print classes
         System.out.println();
         Class classes[] = timetable.getClasses();
         int classIndex = 1;
-        for (Class bestClass : classes) {
-            System.out.println("Class " + classIndex + ":");
-            System.out.println("Module: " + timetable.getModule(bestClass.getModuleId()).getModuleName());
-            System.out.println("Group: " + timetable.getGroup(bestClass.getGroupId()).getGroupId());
-            System.out.println("Room: " + timetable.getRoom(bestClass.getRoomId()).getRoomNumber());
-            System.out.println("Professor: " + timetable.getProfessor(bestClass.getProfessorId()).getProfessorName());
-            System.out.println("Time: " + timetable.getTimeslot(bestClass.getTimeslotId()).getTimeslot());
-            System.out.println("-----");
-            classIndex++;
+        File f=new File("output.csv");
+        File f1 = new File("output.html");
+        FileWriter fw=null;
+        FileWriter fw1 = null;
+        BufferedWriter bw=null;
+        BufferedWriter bw1 = null;
+        try{
+            if(!f.exists()){
+                f.createNewFile();
+            }
+            if(!f1.exists()){
+                f1.createNewFile();
+            }
+            fw=new FileWriter(f.getAbsoluteFile());  //true表示可以追加新内容
+            //fw=new FileWriter(f.getAbsoluteFile()); //表示不追加
+            bw=new BufferedWriter(fw);
+            bw.write("课程号");
+            bw.write(",课程");
+            bw.write(",班级");
+            bw.write(",教室");
+            bw.write(",教师");
+            bw.write(",时间");
+            bw.write("\n");
+            fw1 = new FileWriter(f1.getAbsoluteFile());
+            bw1 = new BufferedWriter(fw1);
+            bw1.write("<style>th,td{border:1px solid black;}table{border-collapse: collapse;}</style>");
+            bw1.write("<table>");
+            bw1.write("<thead>");
+            bw1.write("<tr>");
+            bw1.write("<th>课程号</th>");
+            bw1.write("<th>课程</th>");
+            bw1.write("<th>班级</th>");
+            bw1.write("<th>教室</th>");
+            bw1.write("<th>教师</th>");
+            bw1.write("<th>时间</th>");
+            bw1.write("</tr>");
+            bw1.write("<tbody>");
+            for (Class bestClass : classes) {
+                /*
+                System.out.println("Class " + classIndex + ":");
+                System.out.println("Module: " + timetable.getModule(bestClass.getModuleId()).getModuleName());
+                System.out.println("Group: " + problem.getReferGroup(timetable.getGroup(bestClass.getGroupId()).getGroupId())));
+                System.out.println("Room: " + timetable.getRoom(bestClass.getRoomId()).getRoomNumber());
+                System.out.println("Professor: " + timetable.getProfessor(bestClass.getProfessorId()).getProfessorName());
+                System.out.println("Time: " + timetable.getTimeslot(bestClass.getTimeslotId()).getTimeslot());
+                System.out.println("-----");
+                */
+                 bw.write(Integer.toString(classIndex));
+                 bw.write(",");
+                 bw.write(timetable.getModule(bestClass.getModuleId()).getModuleName());
+                 bw.write(",");
+                 bw.write(problem.getReferGroup(timetable.getGroup(bestClass.getGroupId()).getGroupId()));
+                 bw.write(",");
+                 bw.write(timetable.getRoom(bestClass.getRoomId()).getRoomNumber());
+                bw.write(",");
+                bw.write(timetable.getProfessor(bestClass.getProfessorId()).getProfessorName());
+                bw.write(",");
+                bw.write(timetable.getTimeslot(bestClass.getTimeslotId()).getTimeslot());
+                bw.write("\n");
+
+                bw1.write("<tr>");
+                bw1.write("<td>"+Integer.toString(classIndex)+"</td>");
+                bw1.write("<td>"+timetable.getModule(bestClass.getModuleId()).getModuleName()+"</td>");
+                bw1.write("<td>"+problem.getReferGroup(timetable.getGroup(bestClass.getGroupId()).getGroupId()
+                )+"</td>");
+                bw1.write("<td>"+ timetable.getRoom(bestClass.getRoomId()).getRoomNumber()+"</td>");
+                bw1.write("<td>"+timetable.getProfessor(bestClass.getProfessorId()).getProfessorName()+"</td>");
+                bw1.write("<td>"+timetable.getTimeslot(bestClass.getTimeslotId()).getTimeslot()+"</td>");
+                bw1.write("\n");
+                bw1.write("</tr>");
+                classIndex++;
+            }
+            bw1.write("</tbody>");
+            bw1.write("</table>");
+            bw.close();
+            bw1.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        File f2=new File("data.js");
+        FileWriter fw2=null;
+        BufferedWriter bw2 = null;
+        try {
+            if (!f2.exists()) {
+                f2.createNewFile();
+            }
+            fw2=new FileWriter(f2.getAbsoluteFile());
+            bw2=new BufferedWriter(fw2);
+            bw2.write("const data=[");
+
+
+            for (Class bestClass : classes) {
+                String module =timetable.getModule(bestClass.getModuleId()).getModuleName();
+                int groupId = timetable.getGroup(bestClass.getGroupId()).getGroupId();
+                String group = problem.getReferGroup(timetable.getGroup(bestClass.getGroupId()).getGroupId());
+                String room = timetable.getRoom(bestClass.getRoomId()).getRoomNumber();
+                String professor = timetable.getProfessor(bestClass.getProfessorId()).getProfessorName();
+                int timeslot =timetable.getTimeslot(bestClass.getTimeslotId()).getTimeslotId();
+                    bw2.write("{");
+                    bw2.write("groupId: "+ ((Integer)groupId).toString());
+                    bw2.write(",");
+                    bw2.write("groupName:" + "'" + group + "'");
+                    bw2.write(",");
+                    bw2.write("module:"+ "'" + module + "'");
+                    bw2.write(",");
+                    bw2.write("room:" +"'" +room +"'");
+                    bw2.write(",");
+                    bw2.write("professor:" +"'" + professor+ "'");
+                    bw2.write(",");
+                    bw2.write("timeslotId:"+((Integer) timeslot).toString());
+                    bw2.write("}");
+                    bw2.write(",");
+            }
+
+            bw2.write("]");
+            bw2.close();
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 

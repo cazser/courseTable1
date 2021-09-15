@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,
+        td {
+            border: 1px solid black;
+            width: 300px;
+            overflow: hidden;
+        }
+        
+        table {
+            border-collapse: collapse;
+            table-layout: fixed;
+            word-break: keep-all;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>班级</th>
+                <th>星期一上午第1节</th>
+                <th>星期一上午第2节</th>
+                <th>星期一下午午第1节</th>
+                <th>星期一下午第2节</th>
+                <th>星期二上午第1节</th>
+                <th>星期二上午第2节</th>
+                <th>星期二下午午第1节</th>
+                <th>星期二下午第2节</th>
+                <th>星期三上午第1节</th>
+                <th>星期三上午第2节</th>
+                <th>星期三下午午第1节</th>
+                <th>星期三下午第2节</th>
+                <th>星期四上午第1节</th>
+                <th>星期四上午第2节</th>
+                <th>星期四下午午第1节</th>
+                <th>星期四下午第2节</th>
+                <th>星期五上午第1节</th>
+                <th>星期五上午第2节</th>
+                <th>星期五下午午第1节</th>
+                <th>星期五下午第2节</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <script src="./data.js"></script>
+
+    <script>
+        const data1 = {}
+        for (let i = 0; i < data.length; i++) {
+            if (data1[data[i].groupName] === undefined) {
+                data1[data[i].groupName] = new Array(20).fill({})
+            }
+
+            let index = 0;
+            let timeslotID = data[i].timeslotId;
+            if (timeslotID > 10) {
+                index = timeslotID + 1;
+            } else {
+                index = timeslotID - 1;
+            }
+            data1[data[i].groupName][
+                index
+            ] = {
+                module: data[i].module,
+                room: data[i].room,
+                professor: data[i].professor
+            }
+        }
+        const tbody = document.querySelector("#tbody");
+        for (let key of Object.keys(data1)) {
+            let list = data1[key]
+            let row = document.createElement("tr");
+            let h = document.createElement("td");
+            h.textContent = key;
+            row.appendChild(h);
+            for (let i = 0; i < list.length; i++) {
+                let td = document.createElement("td");
+                if (list[i].module !== undefined) {
+                    td.textContent = `课程:${list[i].module}
+		    教室:${list[i].room}
+		    老师:${list[i].professor}`
+                }
+                row.appendChild(td);
+            }
+            tbody.appendChild(row);
+        }
+    </script>
+</body>
+
+</html>

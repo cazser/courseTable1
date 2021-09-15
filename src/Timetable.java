@@ -76,7 +76,7 @@ public class Timetable {
         return this.modules;
     }
 
-    private HashMap<Integer, Professor> getProfessors() {
+    public HashMap<Integer, Professor> getProfessors() {
         return this.professors;
     }
 
@@ -97,8 +97,8 @@ public class Timetable {
      * @param professorId
      * @param professorName
      */
-    public void addProfessor(int professorId, String professorName) {
-        this.professors.put(professorId, new Professor(professorId, professorName));
+    public void addProfessor(int professorId, String professorName, int[] timePreference) {
+        this.professors.put(professorId, new Professor(professorId, professorName, timePreference));
     }
 
     /**
@@ -356,6 +356,15 @@ public class Timetable {
             for (Class classB : this.classes) {
                 if (classA.getProfessorId() == classB.getProfessorId()
                         && classA.getTimeslotId() == classB.getTimeslotId()
+                        && classA.getClassId() != classB.getClassId()) {
+                    clashes++;
+                    break;
+                }
+            }
+            // Check if time is available
+            for (Class classB : this.classes) {
+                if (classA.getTimeslotId() == classB.getTimeslotId()
+                        && classA.getGroupId() == classB.getGroupId()
                         && classA.getClassId() != classB.getClassId()) {
                     clashes++;
                     break;

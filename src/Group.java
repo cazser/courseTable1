@@ -7,7 +7,7 @@ public class Group {
     private final int groupId;
     private final int groupSize;
     private final int moduleIds[];
-    //private final int preserve[];
+    private final int preserve[];
 
     /**
      * Initialize Group
@@ -16,11 +16,16 @@ public class Group {
      * @param groupSize
      * @param moduleIds
      */
-    public Group(int groupId, int groupSize, int moduleIds[]/* int preserve[]*/) {
+    public Group(int groupId, int groupSize, int moduleIds[], int preserve[]) {
         this.groupId = groupId;
         this.groupSize = groupSize;
         this.moduleIds = moduleIds;
-       // this.preserve = preserve;
+        this.preserve = preserve;
+    }
+
+
+    public int[] getPreserve() {
+        return preserve;
     }
 
     /**

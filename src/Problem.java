@@ -75,54 +75,98 @@ public class Problem {
                 0,0,
                 0,0,0,0,
                 0,0,0,0});
-        timetable.addProfessor(3,"大学英语1",new int[]{0,
-                -1000, -1000, -1000, -1000,
-                -1000,10000000,-1000, -1000,
-                -1000,-1000,
-                -1000,-1000,-1000,-1000,
-                10000000,-1000,-1000,-1000});
-        timetable.addProfessor(4,"李持磊",new int[]{0,
+
+        timetable.addProfessor(3,"李持磊",new int[]{0,
                 0,0,0,0,
                 0,0,0,0,
                 0,0,
                 0,0,0,0,
                 0,0,0,0});
-        timetable.addProfessor(5,"体育1",new int[]{0,
-                -1000,-1000,1000000,-1000,
-                -1000,-1000,-1000,-1000,
-                -1000,-1000,
-                -1000,-1000,-1000,-1000,
-                -1000,-1000,-1000,-1000});
-        timetable.addProfessor(6,"孙鹏飞",new int[]{0,
+        timetable.addProfessor(4,"孙鹏飞",new int[]{0,
                 0,0,0,0,
                 0,0,0,0,
                 0,0,
                 0,0,0,0,
                 0,0,0,0});
-        timetable.addProfessor(7,"张洪岩",new int[]{0,
+        timetable.addProfessor(5,"于延",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(6,"李红宇",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(7,"张广玲",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(8,"付伟",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(9,"李志聪",new int[]{0,
                 0,0,0,0,
                 0,0,0,0,
                 0,0,
                 0,0,0,0,
                 0,0,0,0});
 
+
         timetable.addModule(1,"高级语言程序设计1", "高级语言程序设计1", new int[]{1});
         timetable.addModule(2,"高级语言程序设计(实)", "高级语言程序设计(实)", new int[]{1});
         timetable.addModule(3,"高级语言程序设计2", "高级语言程序设计2", new int[]{1});
-        timetable.addModule(4,"线性代数", "线性代数", new int[]{2});
-        timetable.addModule(5,"线性代数2", "线性代数2", new int[]{2});
-        timetable.addModule(6,"大学英语1", "大学英语1", new int[]{3});
-        timetable.addModule(7,"高等数学1", "高等数学1", new int[]{4});
-        timetable.addModule(8,"大学英语1.1", "大学英语1.1", new int[]{3});
-        timetable.addModule(9,"高等数学1.2", "高等数学1.2", new int[]{4});
-        timetable.addModule(10,"高等数学1.3", "高等数学1.3", new int[]{4});
-        timetable.addModule(11,"体育1", "体育1", new int[]{5});
-        timetable.addModule(12,"计算机导论", "计算机导论", new int[]{6});
-        timetable.addModule(13,"计算机导论(实)", "计算机导论(实)", new int[]{6});
-        timetable.addModule(14,"大学生心理健康教育", "大学生心理健康教育", new int[]{7});
+        timetable.addModule(9,"计算机导论", "计算机导论", new int[]{4});
+        timetable.addModule(10,"计算机导论(实)", "计算机导论(实)", new int[]{4});
+
+        timetable.addModule(11,"高级语言程序设计1", "高级语言程序设计1", new int[]{5});
+        timetable.addModule(12,"高级语言程序设计(实)", "高级语言程序设计(实)", new int[]{5});
+        timetable.addModule(13,"高级语言程序设计2", "高级语言程序设计2", new int[]{5});
+        timetable.addModule(14,"计算机导论", "计算机导论", new int[]{4});
+        timetable.addModule(15,"计算机导论(实)", "计算机导论(实)", new int[]{4});
+
+        timetable.addModule(16,"高级语言程序设计1", "高级语言程序设计1", new int[]{6});
+        timetable.addModule(17,"高级语言程序设计(实)", "高级语言程序设计(实)", new int[]{6});
+        timetable.addModule(18,"高级语言程序设计2", "高级语言程序设计2", new int[]{6});
+        timetable.addModule(19,"计算机导论", "计算机导论", new int[]{7});
+        timetable.addModule(20,"计算机导论(实)", "计算机导论(实)", new int[]{7});
+
+
+        timetable.addModule(21,"软件工程专业导论", "软件工程专业导论", new int[]{8});
+        timetable.addModule(22,"软件工程专业导论(实)", "软件工程专业导论(实)", new int[]{8});
+        timetable.addModule(23,"高级语言程序设计1", "高级语言程序设计1", new int[]{9});
+        timetable.addModule(24," 高级语言程序设计(实)" ,"高级语言程序设计(实)", new int[]{9});
+        timetable.addModule(25,"高级语言程序设计2", "高级语言程序设计2", new int[]{9});
+
+        timetable.addModule(26,"软件工程专业导论", "软件工程专业导论", new int[]{8});
+        timetable.addModule(27,"软件工程专业导论(实)", "软件工程专业导论(实)", new int[]{8});
+        timetable.addModule(28,"高级语言程序设计1", "高级语言程序设计1", new int[]{9});
+        timetable.addModule(29," 高级语言程序设计(实)" ,"高级语言程序设计(实)", new int[]{9});
+        timetable.addModule(30,"高级语言程序设计2", "高级语言程序设计2", new int[]{9});
+
         // Set up student groups and the modules they take.
-        timetable.addGroup(1, 100, new int[] { 1,2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 });
-        this.Grouprefer.put(1, "计科1班公费2021");
+        timetable.addGroup(1, 100, new int[] { 1,2, 3,  9, 10},
+                                                    new int[]{2,3,6, 10,11,12,15, 16,18});
+        this.Grouprefer.put(1, "2021计科1班公费");
+        timetable.addGroup(2, 100, new int[] { 11, 12, 13, 14, 15},
+                new int[]{1, 3,6,10,11,12,14, 15});
+        this.Grouprefer.put(2, "2021计科2班行知班");
+        timetable.addGroup(3, 100, new int[] { 16, 17, 18, 19, 20},
+                new int[]{1, 2, 3,6,7, 9, 12,14, 15, 16, 18});
+        this.Grouprefer.put(3, "2021计科34班");
+        timetable.addGroup(4, 100, new int[] { 21, 22, 23, 24, 25},
+                new int[]{ 3,5, 6,7, 12,13,15,16});
+        this.Grouprefer.put(4, "2021软件工程12班");
+        timetable.addGroup(5, 100, new int[] { 26, 27, 28, 29, 30},
+                new int[]{ 2, 3, 6, 7, 8, 14, 15, 16});
+        this.Grouprefer.put(5, "2021软件工程34班");
 
         return timetable;
     }

@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -120,8 +121,8 @@ public class Timetable {
      * @param groupSize
      * @param moduleIds
      */
-    public void addGroup(int groupId, int groupSize, int moduleIds[]) {
-        this.groups.put(groupId, new Group(groupId, groupSize, moduleIds));
+    public void addGroup(int groupId, int groupSize, int moduleIds[], int preserve[]) {
+        this.groups.put(groupId, new Group(groupId, groupSize, moduleIds, preserve));
         this.numClasses = 0;
     }
 
@@ -338,19 +339,25 @@ public class Timetable {
             // Check room capacity
             int roomCapacity = this.getRoom(classA.getRoomId()).getRoomCapacity();
             int groupSize = this.getGroup(classA.getGroupId()).getGroupSize();
-
+            Group group = this.getGroup(classA.getGroupId());
             if (roomCapacity < groupSize) {
                 clashes++;
             }
 
-            // Check if room is taken
-            for (Class classB : this.classes) {
-                if (classA.getRoomId() == classB.getRoomId() && classA.getTimeslotId() == classB.getTimeslotId()
-                        && classA.getClassId() != classB.getClassId()) {
-                    clashes++;
-                    break;
-                }
+            if (Arrays.binarySearch(group.getPreserve(),classA.getTimeslotId())>=0){
+                clashes++;
             }
+
+            // Check if room is taken
+
+                for (Class classB : this.classes) {
+                    if (classA.getRoomId() == classB.getRoomId() && classA.getTimeslotId() == classB.getTimeslotId()
+                            && classA.getClassId() != classB.getClassId()) {
+                        clashes++;
+                        break;
+                    }
+                }
+
 
             // Check if professor is available
             for (Class classB : this.classes) {

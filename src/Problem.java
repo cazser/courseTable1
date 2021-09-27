@@ -703,6 +703,12 @@ public class Problem {
         timetable.addGroup(8, 100, new int[] { 42, 43, 44},
                 new int[]{1, 2, 3,  6, 7, 10, 12, 15, 16});
         this.Grouprefer.put(8, "2021大数据1班");
+ 
+        timetable.addGroup(9, 100, new int[] { 45, 46, 47, 48, 49, 50, 51},
+                new int[]{1, 2, 4,  5,  10, 12, 13, 16, 17});
+        this.Grouprefer.put(9, "2020计科1班公费");
+        
+
 
         timetable.addGroup(19, 100, new int[]  { 131, 132, 133, 134, 135, 136, 137, 138, 139, 140},
                 new int[]{5, 6, 11,  15, 16, 17});

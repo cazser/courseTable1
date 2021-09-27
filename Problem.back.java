@@ -738,7 +738,7 @@ public class Problem {
         timetable.addGroup(9, 100, new int[] { 45, 46, 47, 48, 49, 50, 51},
                 new int[]{1, 2, 4,  5,  10, 12, 13, 16, 17});
         this.Grouprefer.put(9, "2020计科1班公费");
-        timetable.addGroup(10, 100, new int[] { 51, 52, 53, 54, 55, 56, 57, 58, 59, 60},
+        timetable.addGroup(10, 100, new int[] {  52, 53, 54, 55, 56, 57, 58, 59, 60},
                 new int[]{1, 2, 4,  6,  10, 12, 14,  17});
         this.Grouprefer.put(10, "2020计科2班");
         timetable.addGroup(11, 100, new int[] { 61, 62, 63, 64, 65, 66, 67},
@@ -768,7 +768,7 @@ public class Problem {
         timetable.addGroup(19, 100, new int[]  { 131, 132, 133, 134, 135, 136, 137, 138, 139, 140},
                 new int[]{5, 6, 11,  15, 16, 17});
         this.Grouprefer.put(19, "2019计科2班");
-        timetable.addGroup(20, 100, new int[]  { 141, 142, 143, 144, 145, 146, 147, 148, 149, 150},
+        timetable.addGroup(20, 100, new int[]  { 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151},
                 new int[]{ 6, 7, 11,  12,  16, 17});
         this.Grouprefer.put(20, "2019计科嵌入式");
         timetable.addGroup(21, 100, new int[]  {  152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162},
@@ -777,7 +777,7 @@ public class Problem {
         timetable.addGroup(22, 100, new int[]  {   163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173},
                 new int[]{ 7, 12, 16});
         this.Grouprefer.put(22, "2019软件工程架构方向");
-        timetable.addGroup(23, 100, new int[]  {    174, 175, 176, 177, 178, 179, 170, 181, 182, 183, 184},
+        timetable.addGroup(23, 100, new int[]  {    174, 175, 176, 177, 178, 179, 10, 181, 182, 183, 184},
                 new int[]{ 7, 12, 16});
         this.Grouprefer.put(23, "2019软件工程互联方向");
         timetable.addGroup(24, 100, new int[]  {     185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195},

@@ -39,7 +39,7 @@ public class TimeTableGA {
         Timetable timetable = problem.initializeTimetable();
 
         // Initialize GA
-        GeneticAlgorithm ga = new GeneticAlgorithm(200, 0.01, 0.9, 2, 5);
+        GeneticAlgorithm ga = new GeneticAlgorithm(300, 0.01, 0.9, 2, 5);
 
         // Initialize population
         Population population = ga.initPopulation(timetable);

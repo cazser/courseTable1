@@ -154,6 +154,270 @@ public class Problem {
                 0,0,
                 0,0,0,0,
                 0,0,0,0});
+        timetable.addProfessor(16,"常晓娟",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(17,"朱海龙",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(18,"刘玉喜",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(19,"贺维",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(20,"房益龙",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(21,"魏洪伟",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(22,"朱晓",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(23,"穆全起",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(24,"李玉霞",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(25,"王洪侠",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(26,"丁云鸿",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(27,"石哗琼",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(28,"张明宇",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(29,"林琳",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(30,"李晶",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(31,"崔艳玲",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(32,"贾轶男",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(33,"宋岩风",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(34,"韩贤东",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(35,"邸佳奇",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(36,"丁金凤",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(37,"付宝君",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(38,"周英",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(39,"倪蕴涛",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(40,"赵国生",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(41,"姜春茂",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(42,"季伟东",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(43,"李英梅",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(44,"王秀珍",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(45,"于丹",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(46,"刘月兰",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(47,"宋耀文",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(48,"张军",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(49,"伦立军",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(50,"马宁",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(51,"边奕心",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(52,"于晓东",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(53,"段喜梅",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(54,"郑岩",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(55,"杜军",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(56,"邵晶波",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(57,"杨建柏",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+        timetable.addProfessor(58,"张修茂",new int[]{0,
+                0,0,0,0,
+                0,0,0,0,
+                0,0,
+                0,0,0,0,
+                0,0,0,0});
+
+
+
+
+
+
 
 
 

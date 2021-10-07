@@ -415,29 +415,6 @@ public class Problem {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         timetable.addModule(1,"高级语言程序设计1", "高级语言程序设计1", new int[]{1});
         timetable.addModule(2,"高级语言程序设计(实)", "高级语言程序设计(实)", new int[]{1});
         timetable.addModule(3,"高级语言程序设计2", "高级语言程序设计2", new int[]{1});
@@ -701,14 +678,6 @@ public class Problem {
         
 
 
-
-
-
-        
-       
-
-
-
       
         // Set up student groups and the modules they take.
         timetable.addGroup(1, 100, new int[] { 1,2, 3,  9, 10},
@@ -777,7 +746,7 @@ public class Problem {
         timetable.addGroup(22, 100, new int[]  {   163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173},
                 new int[]{ 7, 12, 16});
         this.Grouprefer.put(22, "2019软件工程架构方向");
-        timetable.addGroup(23, 100, new int[]  {    174, 175, 176, 177, 178, 179, 10, 181, 182, 183, 184},
+        timetable.addGroup(23, 100, new int[]  {    174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184},
                 new int[]{ 7, 12, 16});
         this.Grouprefer.put(23, "2019软件工程互联方向");
         timetable.addGroup(24, 100, new int[]  {     185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195},

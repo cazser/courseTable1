@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
 
-public class Population {
+public class Population  implements Serializable {
     private Individual population[];
     private double populationFitness = -1;
 
@@ -151,5 +152,14 @@ public class Population {
         }
     }
 
+    @Override
+    public String toString(){
+        String output = "";
+        for (Individual individual:
+             this.population) {
+            output+= individual.toString() +",";
+        }
+        return output;
+    }
 }
 // 完成

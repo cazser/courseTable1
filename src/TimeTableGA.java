@@ -3,6 +3,19 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.text.MessageFormat;
 /**
  * Don't be daunted by the number of classes in this chapter -- most of them are
  * just simple containers for information, and only have a handful of properties
@@ -32,17 +45,32 @@ import java.util.HashMap;
  */
 
 public class TimeTableGA {
+    private static Population Deserialize() throws Exception, IOException {
 
-    public static void main(String[] args) {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(
+                    new File("Pop.txt")));
+            Population population = (Population) ois.readObject();
+
+            return population;
+
+    }
+    public static void main(String[] args) throws Exception {
         // Get a Timetable object with all the available information.
         Problem problem = new Problem();
         Timetable timetable = problem.initializeTimetable();
 
         // Initialize GA
-        GeneticAlgorithm ga = new GeneticAlgorithm(300, 0.01, 0.9, 2, 5);
+        GeneticAlgorithm ga = new GeneticAlgorithm(120, 0.0001, 0.5, 2, 2);
 
         // Initialize population
-        Population population = ga.initPopulation(timetable);
+        Population population=null;
+        try {
+            System.out.println("反序列化成功");
+            population = Deserialize();
+        }catch (Exception e) {
+                population = ga.initPopulation(timetable);
+            }
+
 
         // Evaluate population
         ga.evalPopulation(population, timetable);
@@ -51,8 +79,7 @@ public class TimeTableGA {
         int generation = 1;
 
         // Start evolution loop
-        while (ga.isTerminationConditionMet(generation, 10000) == false
-                && ga.isTerminationConditionMet(population) == false) {
+        while (ga.isTerminationConditionMet(population) == false) {
             // Print fitness
             // System.out.println("G" + generation + " Best fitness: " +
             // population.getFittest(0).getFitness());
@@ -66,8 +93,17 @@ public class TimeTableGA {
             // Evaluate population
             ga.evalPopulation(population, timetable);
 
+                try {
+                    ObjectOutputStream oo = new ObjectOutputStream(new FileOutputStream(
+                            new File("Pop.txt")));
+                    oo.writeObject(population);
+                } catch (Exception e) {
+                    System.out.println("没成功");
+                }
+
             // Increment the current generation
             generation++;
+            System.out.println(generation);
         }
 
         // Print fitness

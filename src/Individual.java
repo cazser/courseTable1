@@ -1,4 +1,6 @@
-public class Individual {
+import java.io.Serializable;
+
+public class Individual  implements Serializable {
 
     /**
      * In this case, the chromosome is an array of integers rather than a string.

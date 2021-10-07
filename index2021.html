@@ -7,38 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        
-        *::after,
-        *::before {
-            box-sizing: boder-box;
-        }
-        
-        body {
-            background: #eee;
-        }
-        
         th,
         td {
             border: 1px solid black;
             width: 300px;
             overflow: hidden;
-            padding: 5px;
-            min-height: 100px;
-        }
-        
-        tr {
-            min-height: 100px;
         }
         
         table {
             border-collapse: collapse;
             table-layout: fixed;
-            margin: 10px;
             word-break: keep-all;
         }
     </style>
@@ -46,8 +24,8 @@
 
 <body>
 
-    <script src="./data.js"></script>
-    <script src="./common.js"></script>
+    <script src="./data2021.js"></script>
+
     <script>
         const data1 = {}
         for (let i = 0; i < data.length; i++) {
@@ -120,7 +98,7 @@
             for (let i = 0; i < list.length; i++) {
                 let td = document.createElement("td");
                 if (list[i].module !== undefined) {
-                    td.textContent = `${list[i].module}
+                    td.textContent = `课程:${list[i].module}
 		    教室:${list[i].room}
 		    老师:${list[i].professor}`
                 }

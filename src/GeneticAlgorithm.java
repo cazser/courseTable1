@@ -17,11 +17,13 @@ public class GeneticAlgorithm {
     }
 
 
-
+    private void setMutationRate(double rate){
+        this.mutationRate = rate;
+    }
     /**
      * Initialize population
      *
-     * @param length of the individuals chromosome
+     * @param  of the individuals chromosome
      * @return population The initial population generated
      */
     public Population initPopulation(Timetable timetable) {
@@ -37,8 +39,8 @@ public class GeneticAlgorithm {
      * @param maxGenerations   Number of generations to terminate after
      * @return boolean True if termination condition met, otherwise, false
      */
-    public boolean isTerminationConditionMet(int generationsCount, int maxGenerations) {
-        return (generationsCount > maxGenerations);
+    public boolean isTerminationConditionMet(double generationsCount, double maxGenerations) {
+        return ((double)generationsCount > maxGenerations);
     }
 
     /**
@@ -48,7 +50,18 @@ public class GeneticAlgorithm {
      * @return boolean True if termination condition met, otherwise, false
      */
     public boolean isTerminationConditionMet(Population population) {
-        return population.getFittest(0).getFitness() == 1.0;
+        double temp =population.getFittest(0).getFitness();
+        System.out.println(temp);
+        if(temp<0.1){
+            this.setMutationRate(temp/100);
+        }else if(temp<0.3){
+            this.setMutationRate(temp/200);
+        }else {
+            this.setMutationRate(temp /500);
+        }
+    return temp== 1.0;
+
+
     }
 
     /**
@@ -100,7 +113,7 @@ public class GeneticAlgorithm {
             Individual tournamentIndividual = population.getIndividual(i);
             tournament.setIndividual(i, tournamentIndividual);
         }
-
+        //System.out.print("选择\n");
         // Return the best
         return tournament.getFittest(0);
     }
@@ -115,6 +128,7 @@ public class GeneticAlgorithm {
     public Population mutatePopulation(Population population, Timetable timetable) {
         // Initialize new population
         Population newPopulation = new Population(this.populationSize);
+        double bestFitness = population.getFittest(0).getFitness();
 
         // Loop over current population by fitness
         for (int populationIndex = 0; populationIndex < population.size(); populationIndex++) {
@@ -122,6 +136,7 @@ public class GeneticAlgorithm {
 
             // Create random individual to swap genes with
             Individual randomIndividual = new Individual(timetable);
+            //Calculate adaptive mutation rate
 
             // Loop over individual's genes
             for (int geneIndex = 0; geneIndex < individual.getChromosomeLength(); geneIndex++) {
@@ -138,7 +153,7 @@ public class GeneticAlgorithm {
             // Add individual to population
             newPopulation.setIndividual(populationIndex, individual);
         }
-
+        //System.out.println("变异\n");
         // Return mutated population
         return newPopulation;
     }
@@ -182,7 +197,7 @@ public class GeneticAlgorithm {
                 newPopulation.setIndividual(populationIndex, parent1);
             }
         }
-
+       // System.out.println("交叉\n");
         return newPopulation;
     }
     public int getPopulationSize(){

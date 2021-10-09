@@ -5,7 +5,7 @@ public class GeneticAlgorithm {
     private double crossoverRate;
     private int elitismCount;
     protected int tournamentSize;
-
+    private  Problem problem;
     public GeneticAlgorithm(int populationSize, double mutationRate, double crossoverRate, int elitismCount,
                             int tournamentSize) {
 
@@ -15,7 +15,9 @@ public class GeneticAlgorithm {
         this.elitismCount = elitismCount;
         this.tournamentSize = tournamentSize;
     }
-
+public  void InitProblem(Problem problem){
+        this.problem = problem;
+}
 
     private void setMutationRate(double rate){
         this.mutationRate = rate;
@@ -72,8 +74,8 @@ public class GeneticAlgorithm {
      * @return fitness
      */
     public double calcFitness(Individual individual, Timetable timetable) {
-        Problem problem = new Problem();
-        return problem.calcFitness(individual, timetable);
+
+        return this.problem.calcFitness(individual, timetable);
     }
 
     /**
